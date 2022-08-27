@@ -1,9 +1,17 @@
 class Crow:
 
-    def __init__(self, par_count, pa_count, eyes_count):
+    def __init__(self, par_count, pa_count, eyes_count, height):
         self.__par_count = par_count
         self.__pa_count = pa_count
         self.__eyes_count = eyes_count
+        self.__height = height
+
+    def set_height(self, height):
+        if type(height) != int:
+            raise Exception("this is not int")
+        if height < 0:
+            raise Exception("this is <0")
+        self.__height = height
 
     def set_eyes_count(self, eyes_count):
         if type(eyes_count) != int:
@@ -45,3 +53,5 @@ class Crow:
 
     def get_eyes_count(self):
         return self.__eyes_count
+    def get_heigh(self):
+        return self.__height
